@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: myproj-deployment
+spec:
+   replicas: 3
+   selector:
+      matchLabels:
+         app-name: myproj
+   template:
+      metadata:
+         labels:
+            app-name: myproj
+      spec:
+         containers:
+         - name: myproj-ctn
+           image: akshayjedhe/myproj
+           ports:
+           - containerPort: 30001
+         

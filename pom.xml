@@ -13,11 +13,23 @@
 		<version>2.1.9.RELEASE</version>
 	</parent>
 
-	<!-- Additional lines to be added here... -->
+
 	<dependencies>
-	<dependency>
+	
+        <!-- https://mvnrepository.com/artifact/com.google.cloud.tools/jib-maven-plugin -->
+        <dependency>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-web</artifactId>
 	</dependency>
-</dependencies>
+
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+                		<groupId>com.google.cloud.tools</groupId>
+                		<artifactId>jib-maven-plugin</artifactId>
+                		<version>1.8.0</version>
+            		</plugin>
+		</plugins>
+	</build>
 </project>

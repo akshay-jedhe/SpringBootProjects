@@ -10,5 +10,6 @@ spec:
    - name: myapp-port
      targetPort: 30001
      port: 30001
+     nodePort: 30001
      protocol: "TCP"
 

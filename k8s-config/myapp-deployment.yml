@@ -14,7 +14,7 @@ spec:
       spec:
          containers:
          - name: myapp-ctn
-           image: gcr.io/studious-depth-258911/myproject-image:v2.0
+           image: gcr.io/studious-depth-258911/myapp
            ports:
            - containerPort: 30001
 

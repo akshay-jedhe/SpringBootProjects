@@ -1,6 +1,12 @@
 steps:
+  #push the source repo.
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone','https://github.com/akshay-jedhe/SpringBootProjects.git']
+  #build the target image.
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build','-t','gcr.io/${PROJECT_ID}/myapp:latest','.']
+  dir: '/SpringBootProjects/'
+  args: ['build','-t','gcr.io/${PROJECT_ID}/myapp:${SHORT_SHA}','.']
+  #push the target image to the gcr
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push','gcr.io/${PROJECT_ID}/myapp']
-
+  args: ['push','gcr.io/${PROJECT_ID}/myapp:${SHORT_SHA}']
+  

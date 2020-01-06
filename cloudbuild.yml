@@ -1,7 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  dir: '/SpringBootProjects/'
-  args: ['build','-f=./Dockerfile','-t','gcr.io/${PROJECT_ID}/myapp:latest','./target/']
+  args: ['build','-t','gcr.io/${PROJECT_ID}/myapp:latest','.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push','gcr.io/${PROJECT_ID/myapp}']
+  args: ['push','gcr.io/${PROJECT_ID}/myapp']
 

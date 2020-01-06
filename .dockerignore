@@ -1,9 +1,6 @@
 pom*
 src*
-target/classes*
-target/maven*
-target/generated*
-target/*.orignal
+target*
 README*
 myapp*
 .git*

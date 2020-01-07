@@ -18,7 +18,7 @@ public class Example {
 
 	@RequestMapping("/")
 	String home() {
-		return pbvs.getName();
+		return "Sample CICD with cloud-build and kubernetes";
 	}
 	@RequestMapping("/gender")
 	public String getGender() {

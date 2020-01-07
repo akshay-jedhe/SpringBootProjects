@@ -12,4 +12,7 @@ steps:
   #deploy the target image to the gke.
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['set','image','deployment/myapp-deployment','myapp=myapp:${BUILD_ID}']
-  
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=standard-cluster-1'
+

@@ -38,7 +38,8 @@
                 <mainClass>com.java.Example</mainClass>
                 <outputDirectory>${project.basedir}/docker</outputDirectory>
             </configuration>
-        </execution>
+    </execution>
+    </executions>
     </plugin>
   </plugins>
 </build>

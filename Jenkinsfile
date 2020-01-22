@@ -9,6 +9,7 @@ pipeline {
 			}
 			steps {
 				sh label: '', script: 'mvn package'
+				
 			}
 			
 		}
@@ -18,7 +19,7 @@ pipeline {
 				script {
 					def build_image = docker.build("akshayjedhe/myjavaapp:${env.BUILD_ID}","-f=./docker/Dockerfile ./docker/")
 				}
-				sh label: '', script: 'echo "image: akshayjedhe/myjavaapp:${env.BUILD_ID} build"'
+				
 			}
 		}
 		stage("push the docker artifact") {
@@ -29,7 +30,7 @@ pipeline {
 						 build_image.push()
 					}
 				}
-				sh label: '', script: 'echo "image: akshayjedhe/myjavaapp:${env.BUILD_ID} pushed"'
+				
 			}
 		}
 		

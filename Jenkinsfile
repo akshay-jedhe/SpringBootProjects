@@ -17,7 +17,7 @@ pipeline {
 			agent any
 			steps {
 				script {
-					def build_image = docker.build("akshayjedhe/myjavaapp:${env.BUILD_ID}","-f=./docker/Dockerfile ./docker/")
+					docker.build("akshayjedhe/myjavaapp:${env.BUILD_ID}","-f=./docker/Dockerfile ./docker/")
 				}
 				
 			}
@@ -27,7 +27,7 @@ pipeline {
 			steps {
 				script {
 					docker.withRegistry("https://index.docker.io/v1/","docker-id") {
-						 build_image.push()
+						image.push("${env.BUILD_ID}")
 					}
 				}
 				

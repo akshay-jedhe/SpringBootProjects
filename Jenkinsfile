@@ -8,22 +8,25 @@ pipeline {
 				}
 			}
 			steps {
-				sh label: '', script: 'mvn package'
-				
-			}
-			
+				sh label: '', script: 'mvn package'	
+			}	
 		}
-		stage("build and push  docker artifact") {
+		stage("build  docker artifact") {
 			agent any
 			steps {
 				script {
-					def image =  docker.build("akshayjedhe/myjavaapp:${env.BUILD_ID}","-f=./docker/Dockerfile ./docker/") 
+					 image =  docker.build("akshayjedhe/myjavaapp:${env.BUILD_ID}","-f=./docker/Dockerfile ./docker/") 
+				}	
+			}
+		}
+		stage("push docker artifact") {
+			agent any
+			steps {
+				script {
 					docker.withRegistry("https://index.docker.io/v1/","docker-id") {
                                                 image.push("${env.BUILD_ID}")
                                         }
-				
 				}
-				
 			}
 		}
 	}

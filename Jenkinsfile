@@ -32,13 +32,6 @@ pipeline {
 				sh label: '', script: 'echo "image: akshayjedhe/myjavaapp:${env.BUILD_ID} pushed"'
 			}
 		}
-		stage("deploy the build artifact") {
-			agent any
-			steps {
-				script {
-					
-				}
-			}
-		}
+		
 	}
 }

@@ -27,7 +27,7 @@ pipeline {
                                                 image.push("${env.BUILD_ID}")
                                         }
 				}
-				echo ${env.NODE_LABELS}
+				echo "${env.NODE_LABELS}"
 			}
 		}
 	}

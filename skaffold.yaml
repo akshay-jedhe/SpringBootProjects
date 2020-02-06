@@ -1,0 +1,13 @@
+apiVersion: skaffold/v1
+kind: Config
+metadata:
+   name: my-springboot-project
+build:
+   artifacts:
+   - image: akshayjedhe/demoapp
+     jib: {}
+   local: {}
+deploy:
+   kubectl:
+      manifests:
+      - myapp-*

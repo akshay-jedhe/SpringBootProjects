@@ -24,6 +24,16 @@ public class Example {
 	public String getGender() {
 		return pbvs.getEmployeeGender();
 	}
+	@RequestMapping("/msg")
+        public String getMsg() {
+                return "Finaly skaffold is done!";
+        }
+	@RequestMapping("/greetings")
+        public String getGreeting() {
+                return "Good Morning!";
+        }
+
+
 
 	public static void main(String[] args) {
 	  
